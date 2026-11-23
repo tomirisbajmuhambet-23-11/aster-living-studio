@@ -1,12 +1,1647 @@
-<!doctype html><html lang="kk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LUMI HOME — Smart Lighting</title><style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
-:root{--ink:#292820;--muted:#8d8a7f;--bg:#f8f7f2;--paper:#fffefa;--line:#e9e6dc;--gold:#e9ad45;--dark:#35372c;--mint:#e6f0e6}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #e9ad45}aside{position:fixed;inset:0 auto 0 0;width:240px;background:#fffefa;border-right:1px solid var(--line);padding:34px 22px;display:flex;flex-direction:column;z-index:5}.brand{font:800 25px Manrope;letter-spacing:-1.5px;display:flex;gap:11px;align-items:center}.brandmark{background:#efb651;border-radius:15px;width:41px;height:41px;display:grid;place-items:center;font-size:25px}.subbrand{font-size:10px;letter-spacing:2px;color:#a6a196;margin:6px 0 44px 52px}.nav{display:flex;flex-direction:column;gap:7px}.nav button{border:0;text-align:left;padding:14px 15px;background:transparent;color:#77786e;border-radius:13px;font-weight:700;display:flex;gap:12px;align-items:center}.nav button.active{background:#f4e7ca;color:#4b432f}.nav button:hover{background:#f6f2e9}.nav button span{font-size:19px}.sidebar-bottom{margin-top:auto;padding:17px;background:#f3f5eb;border-radius:17px;font-size:12px;line-height:1.6}.status-dot{display:inline-block;width:8px;height:8px;background:#79b48b;border-radius:50%;margin-right:5px}main{margin-left:240px;max-width:1700px;padding:34px 45px 70px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:32px}.eyebrow{text-transform:uppercase;letter-spacing:2.3px;color:#a6a092;font-size:11px;font-weight:800}.topright{display:flex;align-items:center;gap:13px;color:#77766b;font-size:13px}.avatar{width:37px;height:37px;background:#e8dec7;border-radius:50%;display:grid;place-items:center;font-weight:800}.hero{background:#eae9dc;border-radius:27px;min-height:285px;display:grid;grid-template-columns:1.1fr .9fr;overflow:hidden;position:relative}.hero-copy{padding:39px 43px;position:relative;z-index:1}.hero h1{font:800 clamp(30px,3.4vw,49px)/1.15 Manrope;letter-spacing:-2px;margin:13px 0}.hero p{color:#77796d;max-width:390px;line-height:1.65}.hero-art{position:relative;min-height:260px;background:radial-gradient(ellipse at 50% 35%,#f5d9a1 0%,#e9e5d7 45%,#d7d9c9 100%)}.lamp-cord{position:absolute;left:50%;top:0;width:4px;height:92px;background:#716e5d}.lamp-shade{position:absolute;left:calc(50% - 98px);top:89px;width:196px;height:86px;background:#dfbd82;clip-path:polygon(28% 0,72% 0,100% 100%,0 100%);border-radius:20px}.lamp-glow{position:absolute;left:calc(50% - 140px);top:155px;width:280px;height:190px;background:radial-gradient(ellipse at top,rgba(255,204,91,.68),transparent 70%);filter:blur(5px);transition:opacity .4s}.lamp-bulb{position:absolute;left:calc(50% - 20px);top:164px;width:40px;height:26px;background:#fff3be;border-radius:0 0 50% 50%;box-shadow:0 8px 35px #ffd980}.hero-pill{display:inline-flex;background:#fffaf0;border:1px solid #e9d6ad;border-radius:30px;padding:8px 13px;font-size:12px;font-weight:700;gap:8px}.hero-actions{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}.primary{border:0;background:#383c31;color:#fff;padding:12px 20px;border-radius:13px;font-weight:700}.secondary{border:1px solid #d7d4c6;background:#fffdf5;padding:12px 18px;border-radius:13px;font-weight:700}.section-head{display:flex;align-items:center;justify-content:space-between;margin:31px 0 17px}.section-head h2{font:800 22px Manrope;letter-spacing:-.6px;margin:0}.muted{color:#99978c;font-size:13px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:24px}.metric,.panel,.room{background:var(--paper);border:1px solid var(--line);border-radius:21px}.metric{padding:22px}.metric-icon{font-size:25px;margin-bottom:13px}.metric .val{font:800 27px Manrope;letter-spacing:-1px}.metric .lab{font-size:12px;color:#99958b;margin-top:6px}.room-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.room{padding:20px;transition:transform .2s,box-shadow .2s}.room:hover{transform:translateY(-3px);box-shadow:0 12px 30px #3331}.room-top{display:flex;justify-content:space-between;align-items:center}.room-icon{font-size:28px;background:#f6f1e6;border-radius:15px;width:55px;height:55px;display:grid;place-items:center}.switch{width:47px;height:27px;border-radius:20px;background:#dcd9cf;border:0;padding:4px;transition:.2s}.switch:before{content:'';display:block;width:19px;height:19px;background:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 4px #0002}.switch.on{background:#e6b65c}.switch.on:before{transform:translateX(20px)}.room h3{font:800 17px Manrope;margin:18px 0 5px}.room p{color:#a19e93;font-size:12px;margin:0 0 20px}.range-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:10px;color:#777}input[type=range]{width:100%;accent-color:#e6af4e}.color-row{display:flex;gap:8px;align-items:center;margin-top:14px}.swatch{height:22px;width:22px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #ddd;cursor:pointer}.swatch.selected{box-shadow:0 0 0 2px #49453c}.two-col{display:grid;grid-template-columns:1.3fr .7fr;gap:18px}.panel{padding:24px}.panel h3{margin:0 0 7px;font:800 17px Manrope}.chart{display:flex;gap:9px;align-items:end;height:160px;border-bottom:1px solid #e7e4db;margin-top:25px}.bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:end;height:100%;gap:7px;font-size:10px;color:#9b978e}.bar{width:min(32px,90%);background:#e9b45d;border-radius:7px 7px 0 0;min-height:4px;transition:height .5s}.setting{display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #eeece5;gap:15px}.setting:last-child{border-bottom:0}.setting b{font-size:13px}.setting small{display:block;color:#a29f94;margin-top:5px;font-size:11px}.slider-control{width:150px}.activity{list-style:none;padding:0;margin:12px 0 0}.activity li{display:flex;align-items:start;gap:12px;padding:12px 0;border-bottom:1px solid #f0eee7;font-size:12px}.activity li:last-child{border:0}.activity .time{margin-left:auto;color:#aaa;white-space:nowrap}.tag{display:inline-flex;background:#e7f1e6;color:#5a8560;border-radius:7px;padding:5px 8px;font-size:10px;font-weight:800}.warning{background:#fff2dd;color:#a86d23}.page{display:none}.page.active{display:block}.wide{max-width:1000px}.data-table{width:100%;border-collapse:collapse;font-size:13px}.data-table th,.data-table td{padding:14px 10px;border-bottom:1px solid #eeece5;text-align:left}.data-table th{color:#999;font-size:11px;text-transform:uppercase;letter-spacing:1px}.alert{padding:14px 17px;border-radius:12px;background:#f8eee0;color:#986729;font-size:12px;margin:12px 0}.notice{font-size:12px;color:#8b887d;line-height:1.7}.foot{color:#aaa;font-size:11px;margin-top:36px;text-align:center}.toast{position:fixed;bottom:24px;right:24px;background:#35372c;color:#fff;padding:13px 20px;border-radius:12px;opacity:0;transform:translateY(10px);transition:.25s;z-index:20;font-size:13px}.toast.show{opacity:1;transform:translateY(0)}@media(max-width:1100px){.metrics{grid-template-columns:repeat(2,1fr)}.room-grid{grid-template-columns:repeat(2,1fr)}main{padding:25px}}@media(max-width:760px){aside{position:static;width:auto;padding:15px}.subbrand,.sidebar-bottom{display:none}.nav{flex-direction:row;overflow:auto}.nav button{white-space:nowrap;font-size:12px}.brand{font-size:20px}.brandmark{height:33px;width:33px}main{margin:0;padding:18px}.hero{grid-template-columns:1fr}.hero-art{min-height:160px}.hero-copy{padding:27px}.room-grid,.two-col{grid-template-columns:1fr}.topright{display:none}}@media(max-width:480px){.metrics{grid-template-columns:1fr 1fr}.metric{padding:15px}.metric .val{font-size:22px}.room-grid{grid-template-columns:1fr}}
-</style></head><body><aside><div class="brand"><span class="brandmark">☀</span>LUMI HOME</div><div class="subbrand">SMART LIGHTING</div><nav class="nav"><button class="active" data-page="dashboard"><span>◫</span> Басқару панелі</button><button data-page="rooms"><span>⌂</span> Бөлмелер</button><button data-page="automation"><span>◷</span> Автоматтандыру</button><button data-page="analytics"><span>▥</span> Статистика</button><button data-page="settings"><span>⚙</span> Баптаулар</button></nav><div class="sidebar-bottom"><span class="status-dot"></span><b>Жүйе белсенді</b><br>IoT құрылғылары симуляция режимінде жұмыс істейді.<br><span style="color:#aaa">LUMI HOME · v1.0</span></div></aside><main><header class="top"><div><div class="eyebrow">Ақылды үй • Жарықтандыру</div><div class="muted" id="today"></div></div><div class="topright"><span class="status-dot"></span> SIMULATION ONLINE <span class="avatar">LH</span></div></header>
-<section class="page active" id="dashboard"><div class="hero"><div class="hero-copy"><div class="hero-pill">✦ Үйіңізге жайлылық сыйлаңыз</div><h1>Жарықпен бірге<br>үй де жанданады.</h1><p>Үйдегі әр шамды бір жерден басқарыңыз. Ыңғайлы, үнемді және ақылды жарықтандыру.</p><div class="hero-actions"><button class="primary" id="allOn">☀ Барлығын қосу</button><button class="secondary" id="allOff">☾ Барлығын өшіру</button></div></div><div class="hero-art"><div class="lamp-cord"></div><div class="lamp-shade"></div><div class="lamp-glow" id="heroGlow"></div><div class="lamp-bulb"></div></div></div><div class="metrics"><div class="metric"><div class="metric-icon">💡</div><div class="val" id="activeCount">0 / 6</div><div class="lab">Қосылған шамдар</div></div><div class="metric"><div class="metric-icon">⚡</div><div class="val" id="powerNow">0 W</div><div class="lab">Ағымдағы қуат</div></div><div class="metric"><div class="metric-icon">🌤</div><div class="val" id="ambientValue">65%</div><div class="lab">Сыртқы жарық деңгейі</div></div><div class="metric"><div class="metric-icon">🍃</div><div class="val" id="savingValue">0%</div><div class="lab">Есептік энергия үнемдеу</div></div></div><div class="section-head"><h2>Менің бөлмелерім</h2><button class="secondary" data-go="rooms">Барлығын көру →</button></div><div class="room-grid" id="dashRooms"></div><div class="section-head"><h2>Үйдің белсенділігі</h2><span class="muted">Соңғы оқиғалар</span></div><div class="two-col"><div class="panel"><h3>Энергияны пайдалану</h3><div class="muted">Симуляциялық соңғы 7 күн</div><div class="chart" id="miniChart"></div></div><div class="panel"><h3>Жүйе оқиғалары</h3><ul class="activity" id="recentActivity"></ul></div></div></section>
-<section class="page" id="rooms"><div class="section-head" style="margin-top:0"><div><div class="eyebrow">БӨЛМЕЛЕРДІ БАСҚАРУ</div><h2>Жарықтандыру аймақтары</h2></div><button class="secondary" id="roomsAllOff">Барлығын өшіру</button></div><p class="muted">Әр бөлменің жарықтығын және жарық түсін жеке реттеңіз.</p><div class="room-grid" id="allRooms" style="margin-top:25px"></div></section>
-<section class="page wide" id="automation"><div class="eyebrow">АҚЫЛДЫ СЦЕНАРИЙЛЕР</div><h1>Автоматтандыру</h1><p class="muted">Қозғалыс және жарық датчиктерін өзгертіп, жүйенің әрекетін бақылаңыз.</p><div class="two-col" style="margin-top:25px"><div class="panel"><h3>Датчиктер симуляциясы</h3><div class="setting"><div><b>🌤 Сыртқы жарық</b><small>0% — қараңғы, 100% — өте жарық</small></div><div><strong id="ambientLabel">65%</strong><input id="ambient" type="range" min="0" max="100" value="65" class="slider-control"></div></div><div class="setting"><div><b>🚶 Қозғалыс датчигі</b><small>Бөлмеде қозғалыс бар ма?</small></div><button id="motionToggle" class="switch" aria-label="Қозғалыс датчигі"></button></div><div class="setting"><div><b>🌡 Температура датчигі</b><small>Оқу мақсатындағы виртуалды датчик</small></div><div><strong id="tempLabel">23°C</strong><input id="temp" type="range" min="10" max="40" value="23" class="slider-control"></div></div><div class="setting"><div><b>🤖 Автоматты жарық</b><small>Қараңғы және қозғалыс болса, дәліз шамын қосады</small></div><button id="autoToggle" class="switch" aria-label="Автоматты режим"></button></div><div class="setting"><div><b>🌙 Түнгі режим</b><small>Барлық қосылған шамдардың жарықтығын 20%-ға түсіреді</small></div><button class="secondary" id="nightMode">Қосу</button></div></div><div class="panel"><h3>Автоматтандыру күйі</h3><p id="automationState" class="alert">Автоматты режим өшірулі</p><div style="background:#f7f5ee;padding:19px;border-radius:15px;margin-top:20px"><div style="font-size:42px;text-align:center" id="sensorIcon">🌞</div><h3 style="text-align:center;margin:12px 0">Виртуалды орта</h3><p class="notice" style="text-align:center">Датчик мәндері JavaScript арқылы симуляцияланады. Нақты аппараттық сенсор қосылмаған.</p></div><div class="section-head"><h2 style="font-size:15px">Ескертулер</h2></div><div id="alerts"></div></div></div></section>
-<section class="page wide" id="analytics"><div class="eyebrow">ЭНЕРГИЯ МЕН ТИІМДІЛІК</div><h1>Жарық статистикасы</h1><p class="muted">Көрсеткіштер — симуляциялық бағалау; нақты электр есептегішіне қосылмаған.</p><div class="metrics" style="grid-template-columns:repeat(3,1fr)"><div class="metric"><div class="metric-icon">⚡</div><div class="val" id="statPower">0 W</div><div class="lab">Ағымдағы тұтыну</div></div><div class="metric"><div class="metric-icon">🔋</div><div class="val" id="statDaily">0 kWh</div><div class="lab">8 сағаттық есептік тұтыну</div></div><div class="metric"><div class="metric-icon">🍃</div><div class="val" id="statSaving">0%</div><div class="lab">Максималды қуатпен салыстырғандағы үнем</div></div></div><div class="panel" style="margin-top:20px"><h3>Апталық энергия графигі</h3><p class="muted">Демонстрациялық мәліметтер</p><div class="chart" id="largeChart" style="height:240px"></div></div><div class="panel" style="margin-top:20px"><h3>Бөлмелер бойынша есеп</h3><table class="data-table"><thead><tr><th>Бөлме</th><th>Күйі</th><th>Жарықтық</th><th>Қуат</th></tr></thead><tbody id="statsTable"></tbody></table><button class="secondary" style="margin-top:20px" id="exportCsv">↓ CSV жүктеу</button></div></section>
-<section class="page wide" id="settings"><div class="eyebrow">ЖҮЙЕ ПАРАМЕТРЛЕРІ</div><h1>Баптаулар</h1><div class="panel" style="margin-top:22px"><h3>Жоба туралы</h3><p class="notice">LUMI HOME — №2 Smart Lighting тақырыбы бойынша IoT құрылғыларын виртуалды басқару веб-қосымшасы. Деректер браузердің localStorage жадында сақталады. Бұлттық Firebase байланысы бұл нұсқада қосылмаған.</p><div class="setting"><div><b>Демонстрациялық деректерді қалпына келтіру</b><small>Бөлмелер мен датчиктер бастапқы күйге қайтады</small></div><button class="secondary" id="reset">Қалпына келтіру</button></div><div class="setting"><div><b>Деректерді JSON ретінде жүктеу</b><small>Баптаулар мен соңғы оқиғаларды сақтау</small></div><button class="secondary" id="exportJson">JSON жүктеу</button></div></div></section><footer class="foot">LUMI HOME © 2026 · IoT Smart Lighting Simulation · Оқу жобасы</footer></main><div class="toast" id="toast"></div><script>
-const defaults={rooms:[{id:1,name:'Қонақ бөлме',icon:'🛋️',sub:'Негізгі жарық',on:true,brightness:78,color:'#ffd58b',watts:18},{id:2,name:'Жатын бөлме',icon:'🛏️',sub:'Жұмсақ жарық',on:true,brightness:46,color:'#ffe4b2',watts:12},{id:3,name:'Ас үй',icon:'☕',sub:'Жұмыс аймағы',on:false,brightness:85,color:'#fff1ce',watts:15},{id:4,name:'Дәліз',icon:'🚪',sub:'Қозғалыс шамы',on:false,brightness:65,color:'#fff1ce',watts:10},{id:5,name:'Жұмыс бөлмесі',icon:'📚',sub:'Оқу шамы',on:true,brightness:92,color:'#f9f9ff',watts:14},{id:6,name:'Балкон',icon:'🌿',sub:'Сыртқы жарық',on:false,brightness:55,color:'#ffd58b',watts:9}],ambient:65,motion:false,temp:23,auto:false,events:[]};let state;try{state=JSON.parse(localStorage.getItem('lumi-home-v1'))||structuredClone(defaults)}catch(e){state=JSON.parse(JSON.stringify(defaults))}if(!state.rooms||state.rooms.length!==6)state=JSON.parse(JSON.stringify(defaults));const $=id=>document.getElementById(id);const time=()=>new Date().toLocaleTimeString('kk-KZ',{hour:'2-digit',minute:'2-digit'});function save(){localStorage.setItem('lumi-home-v1',JSON.stringify(state))}function log(msg){state.events.unshift({msg,time:time()});state.events=state.events.slice(0,20);save()}function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}function power(r){return r.on?r.watts*r.brightness/100:0}function total(){return state.rooms.reduce((s,r)=>s+power(r),0)}function saving(){const max=state.rooms.reduce((s,r)=>s+r.watts,0);return Math.round((1-total()/max)*100)}function roomHTML(r){return `<article class="room"><div class="room-top"><div class="room-icon" style="background:${r.on?'#f8ecd3':'#f4f2ec'}">${r.icon}</div><button class="switch ${r.on?'on':''}" data-switch="${r.id}" aria-label="${r.name} шамын қосу/өшіру" aria-pressed="${r.on}"></button></div><h3>${r.name}</h3><p>${r.sub} · ${r.on?'Қосулы':'Өшірулі'}</p><div class="range-row"><span>Жарықтық</span><b>${r.brightness}%</b></div><input type="range" min="0" max="100" value="${r.brightness}" data-bright="${r.id}" aria-label="${r.name} жарықтығы"><div class="color-row"><span class="muted" style="margin-right:auto">Жарық түсі</span>${['#ffd58b','#ffe4b2','#fff1ce','#f9f9ff'].map(c=>`<button class="swatch ${r.color===c?'selected':''}" style="background:${c}" data-color="${r.id}" data-value="${c}" title="${c}" aria-label="Жарық түсін таңдау"></button>`).join('')}</div></article>`}function chart(id){const vals=[38,55,47,71,58,82,64],days=['Дс','Сс','Ср','Бс','Жм','Сб','Жс'];$(id).innerHTML=vals.map((v,i)=>`<div class="bar-wrap"><div class="bar" style="height:${v}%"></div>${days[i]}</div>`).join('')}function render(){const count=state.rooms.filter(r=>r.on).length;$('activeCount').textContent=`${count} / 6`;$('powerNow').textContent=`${total().toFixed(1)} W`;$('ambientValue').textContent=state.ambient+'%';$('savingValue').textContent=saving()+'%';$('dashRooms').innerHTML=state.rooms.slice(0,3).map(roomHTML).join('');$('allRooms').innerHTML=state.rooms.map(roomHTML).join('');$('statPower').textContent=total().toFixed(1)+' W';$('statDaily').textContent=(total()*8/1000).toFixed(2)+' kWh';$('statSaving').textContent=saving()+'%';$('statsTable').innerHTML=state.rooms.map(r=>`<tr><td>${r.icon} ${r.name}</td><td><span class="tag ${r.on?'':'warning'}">${r.on?'Қосулы':'Өшірулі'}</span></td><td>${r.brightness}%</td><td>${power(r).toFixed(1)} W</td></tr>`).join('');$('heroGlow').style.opacity=count?'1':'.15';$('recentActivity').innerHTML=(state.events.length?state.events:[{msg:'Жүйе іске қосылды',time:'—'},{msg:'Датчиктер симуляциясы дайын',time:'—'}]).slice(0,4).map(e=>`<li><span>✦</span><span>${e.msg}</span><span class="time">${e.time}</span></li>`).join('');$('ambient').value=state.ambient;$('ambientLabel').textContent=state.ambient+'%';$('temp').value=state.temp;$('tempLabel').textContent=state.temp+'°C';$('motionToggle').classList.toggle('on',state.motion);$('autoToggle').classList.toggle('on',state.auto);$('sensorIcon').textContent=state.ambient<35?'🌙':'🌞';$('automationState').textContent=state.auto?(state.ambient<35&&state.motion?'✓ Қозғалыс анықталды: дәліз жарығы автоматты қосылады':'Автоматты режим белсенді. Қараңғылық пен қозғалысты күтуде.'):'Автоматты режим өшірулі';$('alerts').innerHTML=[state.temp>=32?'<div class="alert">⚠ Температура жоғары: '+state.temp+'°C</div>':'',state.ambient<20?'<div class="alert">☾ Сыртқы жарық өте төмен</div>':'',!state.motion?'<div class="notice">Қозғалыс анықталған жоқ.</div>':'<div class="tag">🚶 Қозғалыс анықталды</div>'].join('');chart('miniChart');chart('largeChart')}
-function automation(){if(!state.auto)return;let hall=state.rooms.find(r=>r.id===4),should=state.motion&&state.ambient<35;if(hall.on!==should){hall.on=should;log(should?'Дәліз жарығы автоматты қосылды':'Дәліз жарығы автоматты өшірілді')}}document.addEventListener('click',e=>{let b=e.target.closest('button');if(!b)return;if(b.dataset.page||b.dataset.go){let p=b.dataset.page||b.dataset.go;document.querySelectorAll('.page').forEach(el=>el.classList.toggle('active',el.id===p));document.querySelectorAll('.nav button').forEach(el=>el.classList.toggle('active',el.dataset.page===p));window.scrollTo(0,0)}if(b.dataset.switch){let r=state.rooms.find(x=>x.id===+b.dataset.switch);r.on=!r.on;log(`${r.name}: ${r.on?'жарық қосылды':'жарық өшірілді'}`);render()}if(b.dataset.color){let r=state.rooms.find(x=>x.id===+b.dataset.color);r.color=b.dataset.value;log(`${r.name}: жарық түсі өзгертілді`);render()}});document.addEventListener('input',e=>{if(e.target.dataset.bright){let r=state.rooms.find(x=>x.id===+e.target.dataset.bright);r.brightness=+e.target.value;save();render()}if(e.target.id==='ambient'){state.ambient=+e.target.value;automation();save();render()}if(e.target.id==='temp'){state.temp=+e.target.value;save();render()}});function setAll(on){state.rooms.forEach(r=>r.on=on);log(on?'Барлық шамдар қосылды':'Барлық шамдар өшірілді');render();toast(on?'Барлық шамдар қосылды':'Барлық шамдар өшірілді')}$('allOn').onclick=()=>setAll(true);$('allOff').onclick=()=>setAll(false);$('roomsAllOff').onclick=()=>setAll(false);$('motionToggle').onclick=()=>{state.motion=!state.motion;log('Қозғалыс датчигі: '+(state.motion?'бар':'жоқ'));automation();render()};$('autoToggle').onclick=()=>{state.auto=!state.auto;log('Автоматты режим '+(state.auto?'қосылды':'өшірілді'));automation();render()};$('nightMode').onclick=()=>{state.rooms.forEach(r=>{if(r.on)r.brightness=20});log('Түнгі режим іске қосылды');render();toast('Түнгі режим қосылды')};$('reset').onclick=()=>{if(confirm('Барлық баптауларды қалпына келтіресіз бе?')){state=JSON.parse(JSON.stringify(defaults));save();render();toast('Баптаулар қалпына келді')}};function download(name,content,type){let a=document.createElement('a'),u=URL.createObjectURL(new Blob([content],{type}));a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}$('exportJson').onclick=()=>download('lumi-home-data.json',JSON.stringify(state,null,2),'application/json');$('exportCsv').onclick=()=>download('lumi-home-statistics.csv','Бөлме,Күйі,Жарықтық,Қуат W\n'+state.rooms.map(r=>`${r.name},${r.on?'Қосулы':'Өшірулі'},${r.brightness},${power(r).toFixed(1)}`).join('\n'),'text/csv;charset=utf-8');$('today').textContent=new Date().toLocaleDateString('kk-KZ',{day:'numeric',month:'long',year:'numeric'});render();
-</script></body></html>
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASTER Living Studio — 3D Smart Lighting</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #061321;
+  --card: rgba(13, 34, 50, .78);
+  --text: #ecfbfa;
+  --muted: #a8c2c7;
+  --line: rgba(145, 227, 223, .19);
+  --mint: #72e4ca;
+  --gold: #ffd593;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Manrope, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--mint);
+  outline-offset: 3px;
+}
+
+/* Анимацияланған фон */
+.cinematic-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 12%, #16445a, transparent 58%),
+    linear-gradient(145deg, #04101e, #0a2336 55%, #051322);
+}
+
+.aurora {
+  position: absolute;
+  inset: -35%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    #20c5b52c,
+    #327ad03a,
+    #40d5b72b,
+    transparent
+  );
+  filter: blur(90px);
+  animation: aurora 30s linear infinite;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(20px);
+  animation: drift 12s ease-in-out infinite alternate;
+}
+
+.orb.one {
+  width: 470px;
+  height: 470px;
+  top: -150px;
+  left: -170px;
+  background: radial-gradient(circle, #2bcbba77, transparent 70%);
+}
+
+.orb.two {
+  width: 600px;
+  height: 600px;
+  top: 12%;
+  right: -250px;
+  background: radial-gradient(circle, #457cdb70, transparent 72%);
+  animation-duration: 17s;
+}
+
+.orb.three {
+  width: 480px;
+  height: 480px;
+  bottom: -240px;
+  left: 30%;
+  background: radial-gradient(circle, #27d9a052, transparent 72%);
+  animation-duration: 20s;
+}
+
+.cyber-grid {
+  position: absolute;
+  left: -40%;
+  right: -40%;
+  bottom: -33%;
+  height: 75%;
+  background-image:
+    linear-gradient(#7ceee32b 1px, transparent 1px),
+    linear-gradient(90deg, #7ceee32b 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform: perspective(800px) rotateX(70deg);
+  animation: gridMove 12s linear infinite;
+  opacity: .36;
+}
+
+@keyframes aurora {
+  to { transform: rotate(360deg); }
+}
+@keyframes drift {
+  to { transform: translate(110px, 70px) scale(1.2); }
+}
+@keyframes gridMove {
+  to { background-position: 0 60px, 60px 0; }
+}
+@keyframes float {
+  50% { transform: translateY(-12px); }
+}
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Навигация */
+header {
+  min-height: 82px;
+  padding: 15px 4%;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: rgba(5, 19, 32, .82);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(20px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #54e2c5, #126977);
+  color: white;
+  font-size: 27px;
+  box-shadow: 0 8px 25px #1bcbb64a;
+}
+
+.brand strong {
+  display: block;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.brand small {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+}
+
+nav button {
+  background: transparent;
+  color: var(--muted);
+  border: none;
+  border-radius: 11px;
+  padding: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+nav button.active, nav button:hover {
+  background: #38bbad27;
+  color: #9effe7;
+}
+
+.status {
+  color: var(--mint);
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.dot {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  background: #69f0b7;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #65eecb;
+}
+
+/* Ортақ құрылым */
+main {
+  max-width: 1450px;
+  margin: auto;
+  padding: 35px 4% 70px;
+  min-height: 80vh;
+}
+
+.page { display: none; }
+.page.active { display: block; animation: appear .3s ease; }
+
+.eyebrow {
+  font-size: 10px;
+  color: var(--mint);
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.heading {
+  margin-bottom: 26px;
+}
+
+.heading h1 {
+  font-size: clamp(32px, 4vw, 52px);
+  letter-spacing: -2px;
+  line-height: 1.2;
+  margin: 12px 0;
+}
+
+.heading p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.card {
+  padding: 25px;
+  border-radius: 25px;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, rgba(17, 46, 65, .85), rgba(7, 26, 44, .8));
+  box-shadow: 0 18px 45px #0004;
+  backdrop-filter: blur(15px);
+  margin-bottom: 18px;
+}
+
+.card h2 { margin: 9px 0; font-size: 22px; }
+
+.muted {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.btn {
+  border: 1px solid #8af6dc57;
+  background: linear-gradient(135deg, #50d9bb, #1a8298);
+  color: #05232d;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 12px;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px #30ddba40;
+}
+
+.btn.secondary {
+  color: #b5f8e9;
+  background: #2d9d9c22;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Үй жоспары */
+.house-grid {
+  display: grid;
+  grid-template-columns: 1.45fr .55fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.house-grid > .card { margin-bottom: 0; }
+
+.floor {
+  position: relative;
+  min-height: 455px;
+  border-radius: 22px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  perspective: 950px;
+  background:
+    radial-gradient(circle at 50% 25%, #335d6d, #0a2a3f 70%, #081727);
+  box-shadow: inset 0 0 55px #0007;
+}
+
+.floor::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .4;
+  background-image:
+    linear-gradient(#90e9df28 1px, transparent 1px),
+    linear-gradient(90deg, #90e9df28 1px, transparent 1px);
+  background-size: 35px 35px;
+}
+
+.house-model {
+  position: relative;
+  width: min(94%, 580px);
+  height: 325px;
+  transform: rotateX(9deg) rotateZ(-1.5deg);
+  filter: drop-shadow(0 22px 16px #0008);
+}
+
+.floor-room {
+  position: absolute;
+  border-radius: 15px;
+  border: 2px solid #ffffffbb;
+  outline: 1px solid #8cd0c8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(145deg, #d9e9e6, #9cbcb5);
+  color: #19463e;
+  box-shadow: 0 11px 0 #447b79, 0 18px 22px #0006;
+  transform: skewY(-5deg);
+  transition: .25s;
+}
+
+.floor-room:hover {
+  transform: skewY(-5deg) translateY(-8px);
+  z-index: 5;
+}
+
+.floor-room.selected {
+  outline: 3px solid #55f3cc;
+  box-shadow: 0 12px 0 #418a80, 0 23px 28px #0009, inset 0 0 40px #ffe7af;
+  z-index: 4;
+}
+
+.floor-room.on {
+  background: radial-gradient(circle at 45% 35%, var(--room-glow), #b6d4ca 80%);
+}
+
+.floor-room.off { filter: saturate(.45) brightness(.85); }
+.floor-room .emoji { font-size: 36px; animation: float 5s infinite; }
+.floor-room b { font-size: 11px; }
+.floor-room small { font-size: 9px; }
+
+.floor-room:nth-child(1) { left: 4%; top: 3%; width: 48%; height: 42%; }
+.floor-room:nth-child(2) { right: 5%; top: 3%; width: 38%; height: 42%; }
+.floor-room:nth-child(3) { left: 4%; bottom: 5%; width: 31%; height: 43%; }
+.floor-room:nth-child(4) { left: 38%; bottom: 5%; width: 31%; height: 43%; }
+.floor-room:nth-child(5) { right: 4%; bottom: 5%; width: 25%; height: 24%; }
+.floor-room:nth-child(6) { right: 4%; bottom: 32%; width: 25%; height: 16%; }
+
+.floor-room:nth-child(n+5) .emoji { font-size: 23px; }
+.floor-room:nth-child(n+5) b { font-size: 9px; }
+
+/* Шамды басқару */
+.controller {
+  display: flex;
+  flex-direction: column;
+}
+
+.controller h2 { font-size: 25px; }
+
+.controller-icon { font-size: 35px; }
+
+.toggle {
+  width: 54px;
+  height: 31px;
+  border: none;
+  border-radius: 30px;
+  padding: 4px;
+  background: #57707c;
+  display: inline-flex;
+  align-items: center;
+  transition: .25s;
+  flex-shrink: 0;
+}
+
+.toggle::after {
+  content: "";
+  height: 23px;
+  width: 23px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px #0003;
+  transition: .25s;
+}
+
+.toggle.on { background: #37bfa1; }
+.toggle.on::after { transform: translateX(23px); }
+
+.bulb-preview {
+  height: 160px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  margin: 18px 0;
+  background: radial-gradient(circle, var(--glow), transparent 68%);
+}
+
+.bulb {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 51px;
+  background: radial-gradient(circle at 27% 23%, white, var(--lamp-color) 44%, #a77b4c 90%);
+  box-shadow: inset 10px 10px 19px #fff9, inset -14px -15px 20px #49311a74, 0 0 60px var(--glow);
+  animation: float 4s infinite;
+}
+
+.bulb.off { filter: grayscale(1) brightness(.6); }
+
+.range-line {
+  margin: 18px 0 8px;
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+.range-line strong { color: var(--mint); }
+input[type="range"] { width: 100%; accent-color: #5de1be; }
+
+.tones { display: flex; gap: 13px; padding: 7px 0 18px; }
+
+.tone {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  border: 3px solid #163747;
+}
+
+.tone.selected {
+  outline: 2px solid #76f2d8;
+  outline-offset: 2px;
+}
+
+/* Статистика */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 17px;
+  margin: 22px 0;
+}
+
+.metric {
+  padding: 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  box-shadow: 0 12px 28px #0003;
+}
+
+.metric-icon { font-size: 25px; }
+.metric strong { display: block; font-size: 25px; margin: 13px 0 5px; }
+.metric small { font-size: 11px; color: var(--muted); }
+
+/* Сценарийлер */
+.scene-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 17px 0;
+}
+
+.scene {
+  text-align: left;
+  border-radius: 21px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: white;
+  padding: 23px;
+  box-shadow: 0 8px 0 #02101d8c;
+  transition: .25s;
+}
+
+.scene:hover { transform: translateY(-7px); }
+.scene.active { border-color: var(--mint); background: #14594e9c; }
+.scene span { display: block; font-size: 30px; margin-bottom: 14px; }
+.scene strong { display: block; font-size: 13px; }
+.scene small { display: block; font-size: 11px; color: var(--muted); margin-top: 5px; }
+
+/* Бөлмелер */
+.room-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.room-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px;
+}
+
+.room-card .emoji { font-size: 42px; }
+.room-card h3 { margin: 15px 0 5px; }
+.room-card p { color: var(--muted); font-size: 11px; }
+
+/* Датчиктер */
+.sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.sensor-value {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 23px 0;
+}
+
+.sensor-value small { font-size: 15px; color: var(--muted); }
+
+.motion-view {
+  height: 110px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  background: #2b777641;
+  font-size: 50px;
+  margin: 20px 0;
+}
+
+.motion-view.active {
+  background: #39c89559;
+  box-shadow: inset 0 0 30px #57eeb46e;
+}
+
+/* Ережелер */
+.rule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 17px;
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  padding: 22px;
+}
+
+.rule-icon { font-size: 27px; }
+.rule-copy { flex: 1; }
+.rule-copy h3 { font-size: 14px; margin: 0 0 8px; }
+.rule-copy p { font-size: 11px; color: var(--muted); line-height: 1.7; }
+
+/* График */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.highlight {
+  padding: 30px;
+  background: linear-gradient(135deg, #166f70, #073c50);
+  border-radius: 22px;
+  border: 1px solid var(--line);
+}
+
+.highlight strong {
+  display: block;
+  font-size: 40px;
+  margin: 18px 0;
+}
+
+.highlight p { font-size: 11px; color: var(--muted); }
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 125px 1fr 65px;
+  align-items: center;
+  gap: 15px;
+  margin: 19px 0;
+  font-size: 11px;
+}
+
+.bar-track {
+  height: 17px;
+  border-radius: 20px;
+  background: #24455a;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #33b4b5, #7df2c7);
+}
+
+canvas { width: 100%; height: 225px; }
+
+/* Журнал */
+.event {
+  display: flex;
+  gap: 15px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.event-icon { font-size: 23px; }
+.event-info { flex: 1; }
+.event-info strong { font-size: 12px; }
+.event-info p { color: var(--muted); font-size: 11px; }
+.event time { font-size: 10px; color: var(--muted); }
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 4%;
+  color: var(--muted);
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 50;
+  padding: 15px 20px;
+  background: #146b69;
+  color: white;
+  border-radius: 13px;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: .25s;
+  pointer-events: none;
+}
+
+.toast.show { opacity: 1; transform: none; }
+
+@media(max-width: 1000px) {
+  header { flex-wrap: wrap; }
+  nav { order: 3; width: 100%; }
+  .house-grid { grid-template-columns: 1fr; }
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .room-list { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width: 650px) {
+  main { padding: 22px 3% 50px; }
+  .card { padding: 17px; }
+  .floor { min-height: 330px; }
+  .house-model { height: 250px; }
+  .floor-room .emoji { font-size: 23px; }
+  .floor-room b { font-size: 9px; }
+  .floor-room small { font-size: 8px; }
+  .scene-grid { grid-template-columns: repeat(2, 1fr); }
+  .room-list, .sensor-grid, .rule-grid, .highlights { grid-template-columns: 1fr; }
+  .bar-row { grid-template-columns: 85px 1fr 55px; gap: 7px; }
+  .status { display: none; }
+  .metric { padding: 15px; }
+  .metric strong { font-size: 20px; }
+  footer { flex-direction: column; }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="cinematic-bg" aria-hidden="true">
+  <div class="aurora"></div>
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+  <div class="orb three"></div>
+  <div class="cyber-grid"></div>
+</div>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark">✳</div>
+    <div>
+      <strong>ASTER</strong>
+      <small>LIVING STUDIO</small>
+    </div>
+  </div>
+
+  <nav>
+    <button class="active" data-page="home">Менің үйім</button>
+    <button data-page="rooms">Бөлмелер</button>
+    <button data-page="scenes">Сценарийлер</button>
+    <button data-page="sensors">Датчиктер</button>
+    <button data-page="automation">Автоматика</button>
+    <button data-page="analytics">Аналитика</button>
+    <button data-page="history">Оқиғалар</button>
+  </nav>
+
+  <div class="status"><span class="dot"></span> IoT SIMULATION</div>
+</header>
+
+<main>
+
+<section class="page active" id="home">
+  <div class="heading">
+    <span class="eyebrow">WELCOME TO YOUR SMART SPACE</span>
+    <h1>Үйіңізді жарықпен жандандырыңыз.</h1>
+    <p>Интерактивті 3D үй жоспары және интеллектуалды жарықтандыру жүйесі.</p>
+  </div>
+
+  <div class="house-grid">
+    <article class="card">
+      <div class="flex">
+        <div>
+          <span class="eyebrow">INTERACTIVE HOME</span>
+          <h2>Менің ақылды үйім</h2>
+          <p class="muted">Бөлмені таңдап, жарықты оң жақтан басқарыңыз.</p>
+        </div>
+        <span class="eyebrow">3D VIEW</span>
+      </div>
+
+      <div class="floor">
+        <div class="house-model" id="houseModel"></div>
+      </div>
+    </article>
+
+    <article class="card controller">
+      <div class="flex">
+        <span class="controller-icon" id="selectedIcon">🛋️</span>
+        <button class="toggle on" id="selectedToggle" aria-label="Шамды қосу немесе өшіру"></button>
+      </div>
+
+      <span class="eyebrow" style="margin-top:20px">SELECTED SPACE</span>
+      <h2 id="selectedName">Қонақ бөлме</h2>
+      <p class="muted" id="selectedDescription"></p>
+
+      <div class="bulb-preview" id="bulbPreview">
+        <div class="bulb" id="bulb">✳</div>
+      </div>
+
+      <div class="range-line">
+        <span>Жарықтық</span>
+        <strong id="brightnessLabel">78%</strong>
+      </div>
+      <input type="range" id="brightnessInput" min="1" max="100">
+
+      <div class="range-line">
+        <span>Жарық түсі</span>
+        <strong id="toneLabel">Бейтарап</strong>
+      </div>
+      <div class="tones" id="toneButtons"></div>
+
+      <div class="range-line">
+        <span>Электр қуаты</span>
+        <strong id="selectedPower">0 Вт</strong>
+      </div>
+    </article>
+  </div>
+
+  <div class="metrics" id="metrics"></div>
+
+  <div class="flex" style="margin:35px 0 15px">
+    <h2>Жарық атмосферасы</h2>
+    <button class="btn secondary" data-page="scenes">Барлық сценарийлер ↗</button>
+  </div>
+
+  <div class="scene-grid" id="homeScenes"></div>
+</section>
+
+<section class="page" id="rooms">
+  <div class="heading">
+    <span class="eyebrow">ROOM CONTROL</span>
+    <h1>Барлық бөлмелер</h1>
+    <p>Алты бөлменің шамдарын жеке басқарыңыз.</p>
+  </div>
+
+  <div class="toolbar" style="margin-bottom:20px">
+    <button class="btn" id="allOn">Барлығын қосу</button>
+    <button class="btn secondary" id="allOff">Барлығын өшіру</button>
+  </div>
+
+  <div class="room-list" id="roomList"></div>
+</section>
+
+<section class="page" id="scenes">
+  <div class="heading">
+    <span class="eyebrow">LIGHT EXPERIENCES</span>
+    <h1>Жарық сценарийлері</h1>
+    <p>Бір батырмамен барлық бөлмелердің жарығын өзгертіңіз.</p>
+  </div>
+  <div class="scene-grid" id="allScenes"></div>
+</section>
+
+<section class="page" id="sensors">
+  <div class="heading">
+    <span class="eyebrow">VIRTUAL SENSOR LAB</span>
+    <h1>Датчиктер зертханасы</h1>
+    <p>Жарық, температура және қозғалыс датчиктерін модельдеңіз.</p>
+  </div>
+
+  <div class="sensor-grid">
+    <article class="card">
+      <span class="eyebrow">LIGHT SENSOR</span>
+      <h2>☀ Сыртқы жарық</h2>
+      <div class="sensor-value"><span id="luxValue">350</span> <small>lux</small></div>
+      <input type="range" id="luxInput" min="0" max="1000" step="10">
+      <p class="muted" id="luxText"></p>
+    </article>
+
+    <article class="card">
+      <span class="eyebrow">TEMPERATURE SENSOR</span>
+      <h2>🌡 Температура</h2>
+      <div class="sensor-value"><span id="tempValue">24</span> <small>°C</small></div>
+      <input type="range" id="tempInput" min="15" max="40">
+      <p class="muted" id="tempText"></p>
+    </article>
+
+    <article class="card">
+      <span class="eyebrow">MOTION SENSOR</span>
+      <h2>◎ Қозғалыс</h2>
+      <div class="motion-view" id="motionView">◎</div>
+      <button class="btn" id="motionBtn" style="width:100%">Қозғалысты анықтау</button>
+      <p class="muted" id="motionText"></p>
+    </article>
+  </div>
+
+  <article class="card flex">
+    <div>
+      <h2>Автоматты симуляция</h2>
+      <p class="muted">Датчиктер әр 4 секунд сайын жаңарады.</p>
+    </div>
+    <button class="btn" id="simBtn">▶ Симуляцияны қосу</button>
+  </article>
+</section>
+
+<section class="page" id="automation">
+  <div class="heading">
+    <span class="eyebrow">AUTOMATION RULES</span>
+    <h1>Ақылды автоматтандыру</h1>
+    <p>Датчиктерге байланысты іске қосылатын төрт ереже.</p>
+  </div>
+  <div class="rule-grid" id="ruleGrid"></div>
+</section>
+
+<section class="page" id="analytics">
+  <div class="heading">
+    <span class="eyebrow">ENERGY INTELLIGENCE</span>
+    <h1>Энергия аналитикасы</h1>
+    <p>Виртуалды шамдардың энергия тұтыну көрсеткіштері.</p>
+  </div>
+
+  <div class="highlights">
+    <article class="highlight">
+      <span>Ағымдағы қуат</span>
+      <strong id="analyticsPower">0 Вт</strong>
+      <p>Барлық қосулы шамдардың қуаты</p>
+    </article>
+    <article class="highlight">
+      <span>Жиналған энергия</span>
+      <strong id="analyticsEnergy">0.0000</strong>
+      <p>кВт·сағ — сайт ашық тұрған уақыт</p>
+    </article>
+  </div>
+
+  <article class="card" style="margin-top:20px">
+    <h2>Бөлмелер бойынша қуат</h2>
+    <div id="powerBars"></div>
+  </article>
+
+  <article class="card">
+    <h2>Жарық датчигінің тарихы</h2>
+    <canvas id="historyCanvas"></canvas>
+  </article>
+</section>
+
+<section class="page" id="history">
+  <div class="heading">
+    <span class="eyebrow">ACTIVITY TIMELINE</span>
+    <h1>Оқиғалар тарихы</h1>
+    <p>Жарық басқару командалары мен автоматты ескертулер.</p>
+  </div>
+
+  <article class="card">
+    <div class="flex">
+      <h2>Жүйе журналы</h2>
+      <div class="toolbar">
+        <button class="btn secondary" id="exportBtn">JSON сақтау</button>
+        <label class="btn secondary" style="cursor:pointer">
+          JSON ашу
+          <input type="file" id="importInput" accept=".json" hidden>
+        </label>
+        <button class="btn secondary" id="clearBtn">Тазалау</button>
+      </div>
+    </div>
+    <div id="eventList"></div>
+  </article>
+</section>
+
+</main>
+
+<footer>
+  <strong>✳ ASTER Living Studio</strong>
+  <span>IoT симуляция · 2026 · Firebase қосылмаған</span>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+const KEY = "aster_living_studio_v2";
+
+const ROOM_DEFAULTS = [
+  {id:"living",name:"Қонақ бөлме",icon:"🛋️",watts:36,on:true,brightness:78,tone:1},
+  {id:"bedroom",name:"Жатын бөлме",icon:"🛏️",watts:24,on:true,brightness:40,tone:0},
+  {id:"kitchen",name:"Асүй",icon:"🍽️",watts:30,on:true,brightness:83,tone:2},
+  {id:"office",name:"Жұмыс бөлмесі",icon:"💻",watts:28,on:false,brightness:90,tone:2},
+  {id:"hall",name:"Дәліз",icon:"🚪",watts:12,on:false,brightness:65,tone:1},
+  {id:"balcony",name:"Балкон",icon:"🌿",watts:14,on:false,brightness:60,tone:0}
+];
+
+const TONES = [
+  {name:"Жылы",color:"#ffd29b"},
+  {name:"Бейтарап",color:"#ffedbb"},
+  {name:"Салқын",color:"#d9e8ff"}
+];
+
+const SCENES = [
+  {id:"morning",name:"Таңғы жарық",icon:"☀️",desc:"Жайлы ояну"},
+  {id:"focus",name:"Жұмыс режимі",icon:"💻",desc:"Жоғары жарықтық"},
+  {id:"relax",name:"Тынығу",icon:"🌙",desc:"Жылы жұмсақ жарық"},
+  {id:"away",name:"Үйден шығу",icon:"🏡",desc:"Барлығы өшірулі"}
+];
+
+const RULES = [
+  {id:"motion",name:"Қозғалыс арқылы басқару",icon:"🚶",desc:"Қараңғыда қозғалыс болса, дәліз жарығы қосылады."},
+  {id:"daylight",name:"Табиғи жарық",icon:"☀️",desc:"750 lux-тен жоғары болса, қонақ бөлме шамы өшеді."},
+  {id:"eco",name:"Энергия үнемдеу",icon:"🌱",desc:"Шам жарықтығын 55%-дан асырмайды."},
+  {id:"temperature",name:"Температура ескертуі",icon:"🌡️",desc:"32°C-тан жоғары болса, ескерту жасайды."}
+];
+
+const $ = id => document.getElementById(id);
+
+function initialState() {
+  return {
+    rooms:ROOM_DEFAULTS.map(r=>({...r})),
+    selected:"living",
+    sensors:{lux:350,temp:24,motion:false},
+    rules:{motion:true,daylight:true,eco:false,temperature:true},
+    logs:[],
+    history:[350],
+    energy:0,
+    sim:false,
+    scene:""
+  };
+}
+
+function clamp(v,min,max,fallback) {
+  const n=Number(v);
+  return Number.isFinite(n)?Math.max(min,Math.min(max,n)):fallback;
+}
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g,c=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",
+    '"':"&quot;","'":"&#39;"
+  }[c]));
+}
+
+function normalize(data) {
+  const s=initialState();
+  if(!data||typeof data!=="object")return s;
+
+  if(Array.isArray(data.rooms)) {
+    s.rooms=ROOM_DEFAULTS.map(r=>{
+      const x=data.rooms.find(a=>a&&a.id===r.id);
+      return x?{
+        ...r,
+        on:Boolean(x.on),
+        brightness:clamp(x.brightness,1,100,r.brightness),
+        tone:Math.round(clamp(x.tone,0,2,r.tone))
+      }:{...r};
+    });
+  }
+
+  if(s.rooms.some(r=>r.id===data.selected))s.selected=data.selected;
+
+  if(data.sensors) {
+    s.sensors.lux=clamp(data.sensors.lux,0,1000,350);
+    s.sensors.temp=clamp(data.sensors.temp,15,40,24);
+    s.sensors.motion=Boolean(data.sensors.motion);
+  }
+
+  if(data.rules) {
+    Object.keys(s.rules).forEach(k=>{
+      if(typeof data.rules[k]==="boolean")s.rules[k]=data.rules[k];
+    });
+  }
+
+  s.energy=clamp(data.energy,0,1000000,0);
+  s.sim=Boolean(data.sim);
+  s.scene=typeof data.scene==="string"?data.scene:"";
+
+  if(Array.isArray(data.history)) {
+    s.history=data.history.slice(-30).map(v=>clamp(v,0,1000,350));
+    if(!s.history.length)s.history=[350];
+  }
+
+  if(Array.isArray(data.logs)) {
+    s.logs=data.logs.filter(x=>x&&typeof x.title==="string").slice(0,90)
+      .map(x=>({
+        title:x.title.slice(0,160),
+        detail:String(x.detail||"").slice(0,200),
+        time:String(x.time||"").slice(0,70),
+        warn:Boolean(x.warn)
+      }));
+  }
+  return s;
+}
+
+let state;
+try {
+  state=normalize(JSON.parse(localStorage.getItem(KEY)));
+} catch {
+  state=initialState();
+}
+
+let currentPage="home";
+let lastTick=Date.now();
+let alerted=state.sensors.temp>32;
+let toastTimer;
+
+function save() {
+  try { localStorage.setItem(KEY,JSON.stringify(state)); }
+  catch(e) { console.warn(e); }
+}
+
+function showToast(message) {
+  const t=$("toast");
+  t.textContent=message;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove("show"),2800);
+}
+
+function addLog(title,detail="",warn=false) {
+  state.logs.unshift({
+    title,detail,warn,
+    time:new Date().toLocaleString("kk-KZ")
+  });
+  state.logs=state.logs.slice(0,90);
+  save();
+  renderLogs();
+}
+
+function getRoom(id) { return state.rooms.find(r=>r.id===id); }
+function activeCount() { return state.rooms.filter(r=>r.on).length; }
+function roomPower(r) { return r.on?r.watts*r.brightness/100:0; }
+function totalPower() { return state.rooms.reduce((a,r)=>a+roomPower(r),0); }
+
+function navigate(id) {
+  currentPage=id;
+  document.querySelectorAll(".page").forEach(p=>{
+    p.classList.toggle("active",p.id===id);
+  });
+  document.querySelectorAll("nav button").forEach(b=>{
+    b.classList.toggle("active",b.dataset.page===id);
+  });
+  window.scrollTo({top:0,behavior:"smooth"});
+  if(id==="analytics")requestAnimationFrame(drawChart);
+}
+
+function renderHouse() {
+  $("houseModel").innerHTML=state.rooms.map(r=>`
+    <button class="floor-room ${r.on?"on":"off"} ${r.id===state.selected?"selected":""}"
+      data-select="${r.id}"
+      style="--room-glow:${TONES[r.tone].color}">
+      <span class="emoji">${r.icon}</span>
+      <b>${r.name}</b>
+      <small>${r.on?"● Қосулы":"○ Өшірулі"}</small>
+    </button>
+  `).join("");
+
+  const r=getRoom(state.selected);
+  $("selectedIcon").textContent=r.icon;
+  $("selectedName").textContent=r.name;
+  $("selectedDescription").textContent=`${r.watts} Вт · Ақылды шам`;
+  $("selectedToggle").classList.toggle("on",r.on);
+  $("selectedToggle").setAttribute("aria-pressed",String(r.on));
+  $("brightnessInput").value=r.brightness;
+  $("brightnessLabel").textContent=r.brightness+"%";
+  $("toneLabel").textContent=TONES[r.tone].name;
+  $("selectedPower").textContent=roomPower(r).toFixed(1)+" Вт";
+
+  $("bulbPreview").style.setProperty("--glow",r.on?TONES[r.tone].color+"99":"#64708055");
+  $("bulb").style.setProperty("--lamp-color",TONES[r.tone].color);
+  $("bulb").classList.toggle("off",!r.on);
+
+  $("toneButtons").innerHTML=TONES.map((t,i)=>`
+    <button class="tone ${r.tone===i?"selected":""}"
+      data-tone="${i}" style="background:${t.color}"
+      title="${t.name}" aria-label="${t.name}"></button>
+  `).join("");
+}
+
+function renderMetrics() {
+  const data=[
+    ["💡",`${activeCount()} / 6`,"Қосулы шамдар"],
+    ["⚡",totalPower().toFixed(1)+" Вт","Ағымдағы қуат"],
+    ["☀️",state.sensors.lux+" lux","Жарық датчигі"],
+    ["↗",state.energy.toFixed(4)+" кВт·сағ","Жұмсалған энергия"]
+  ];
+
+  $("metrics").innerHTML=data.map(x=>`
+    <article class="metric">
+      <div class="metric-icon">${x[0]}</div>
+      <strong>${x[1]}</strong>
+      <small>${x[2]}</small>
+    </article>
+  `).join("");
+
+  $("analyticsPower").textContent=totalPower().toFixed(1)+" Вт";
+  $("analyticsEnergy").textContent=state.energy.toFixed(4);
+}
+
+function renderScenes() {
+  const html=SCENES.map(s=>`
+    <button class="scene ${state.scene===s.id?"active":""}" data-scene="${s.id}">
+      <span>${s.icon}</span>
+      <strong>${s.name}</strong>
+      <small>${s.desc}</small>
+    </button>
+  `).join("");
+  $("homeScenes").innerHTML=html;
+  $("allScenes").innerHTML=html;
+}
+
+function renderRooms() {
+  $("roomList").innerHTML=state.rooms.map(r=>`
+    <article class="room-card">
+      <div class="flex">
+        <span class="emoji">${r.icon}</span>
+        <button class="toggle ${r.on?"on":""}"
+          data-toggle="${r.id}" aria-pressed="${r.on}"
+          aria-label="${r.name} шамын қосу немесе өшіру"></button>
+      </div>
+      <h3>${r.name}</h3>
+      <p>${r.watts} Вт · ${r.on?"Қосулы":"Өшірулі"}</p>
+      <div class="range-line">
+        <span>Жарықтық</span><strong>${r.brightness}%</strong>
+      </div>
+      <input type="range" min="1" max="100"
+        value="${r.brightness}" data-bright="${r.id}">
+      <p>Ағымдағы қуат: ${roomPower(r).toFixed(1)} Вт</p>
+      <button class="btn secondary" data-select="${r.id}" style="width:100%">
+        Үй жоспарында ашу ↗
+      </button>
+    </article>
+  `).join("");
+}
+
+function renderSensors() {
+  const s=state.sensors;
+  $("luxValue").textContent=s.lux;
+  $("tempValue").textContent=s.temp;
+  $("luxInput").value=s.lux;
+  $("tempInput").value=s.temp;
+
+  $("luxText").textContent=s.lux<180
+    ?"Қараңғы — жарық қажет"
+    :s.lux>750?"Табиғи жарық жеткілікті":"Жарық қалыпты";
+
+  $("tempText").textContent=s.temp>32
+    ?"⚠ Температура жоғары!"
+    :"Температура қалыпты";
+
+  $("motionView").classList.toggle("active",s.motion);
+  $("motionBtn").textContent=s.motion?"Қозғалысты тоқтату":"Қозғалысты анықтау";
+  $("motionText").textContent=s.motion?"Қозғалыс бар":"Қозғалыс жоқ";
+  $("simBtn").textContent=state.sim?"■ Симуляцияны тоқтату":"▶ Симуляцияны қосу";
+}
+
+function renderRules() {
+  $("ruleGrid").innerHTML=RULES.map(r=>`
+    <article class="rule">
+      <span class="rule-icon">${r.icon}</span>
+      <div class="rule-copy">
+        <h3>${r.name}</h3>
+        <p>${r.desc}</p>
+      </div>
+      <button class="toggle ${state.rules[r.id]?"on":""}"
+        data-rule="${r.id}" aria-pressed="${state.rules[r.id]}"
+        aria-label="${r.name}"></button>
+    </article>
+  `).join("");
+}
+
+function renderAnalytics() {
+  const max=Math.max(1,...state.rooms.map(roomPower));
+  $("powerBars").innerHTML=state.rooms.map(r=>`
+    <div class="bar-row">
+      <span>${r.name}</span>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:${roomPower(r)/max*100}%"></div>
+      </div>
+      <strong>${roomPower(r).toFixed(1)} Вт</strong>
+    </div>
+  `).join("");
+
+  if(currentPage==="analytics")requestAnimationFrame(drawChart);
+}
+
+function drawChart() {
+  const canvas=$("historyCanvas");
+  const rect=canvas.getBoundingClientRect();
+  const w=Math.max(280,rect.width);
+  const h=225;
+  const scale=window.devicePixelRatio||1;
+
+  canvas.width=Math.round(w*scale);
+  canvas.height=Math.round(h*scale);
+
+  const ctx=canvas.getContext("2d");
+  ctx.scale(scale,scale);
+  ctx.clearRect(0,0,w,h);
+
+  const left=45,right=16,top=17,bottom=28;
+  const gw=w-left-right;
+  const gh=h-top-bottom;
+
+  ctx.font="11px Arial";
+
+  for(let i=0;i<=4;i++) {
+    const y=top+gh*i/4;
+    ctx.strokeStyle="#54829250";
+    ctx.beginPath();
+    ctx.moveTo(left,y);
+    ctx.lineTo(w-right,y);
+    ctx.stroke();
+    ctx.fillStyle="#a6c7ce";
+    ctx.fillText(String(1000-i*250),5,y+4);
+  }
+
+  const values=state.history;
+  if(!values.length)return;
+
+  ctx.beginPath();
+  values.forEach((v,i)=>{
+    const x=left+(values.length===1?gw/2:i*gw/(values.length-1));
+    const y=top+(1000-v)/1000*gh;
+    if(i===0)ctx.moveTo(x,y);
+    else ctx.lineTo(x,y);
+  });
+
+  ctx.strokeStyle="#70f0cd";
+  ctx.lineWidth=3;
+  ctx.lineJoin="round";
+  ctx.stroke();
+}
+
+function renderLogs() {
+  $("eventList").innerHTML=state.logs.length
+    ?state.logs.map(e=>`
+      <div class="event">
+        <span class="event-icon">${e.warn?"⚠️":"✳"}</span>
+        <div class="event-info">
+          <strong>${escapeHTML(e.title)}</strong>
+          <p>${escapeHTML(e.detail)}</p>
+        </div>
+        <time>${escapeHTML(e.time)}</time>
+      </div>
+    `).join("")
+    :'<p class="muted">Журнал бос.</p>';
+}
+
+function renderAll() {
+  renderHouse();
+  renderMetrics();
+  renderScenes();
+  renderRooms();
+  renderSensors();
+  renderRules();
+  renderAnalytics();
+  renderLogs();
+  save();
+}
+
+function applyRules() {
+  const s=state.sensors;
+
+  if(state.rules.motion) {
+    const hall=getRoom("hall");
+    const shouldOn=s.motion&&s.lux<180;
+    if(hall.on!==shouldOn) {
+      hall.on=shouldOn;
+      addLog("Қозғалыс ережесі",`Дәліз шамы ${shouldOn?"қосылды":"өшірілді"}`);
+    }
+  }
+
+  if(state.rules.daylight&&s.lux>750) {
+    const living=getRoom("living");
+    if(living.on) {
+      living.on=false;
+      addLog("Күндізгі жарық","Қонақ бөлме шамы өшірілді");
+    }
+  }
+
+  if(state.rules.eco) {
+    state.rooms.forEach(r=>{
+      if(r.on&&r.brightness>55) {
+        r.brightness=55;
+        addLog("Энергия үнемдеу",`${r.name}: 55%`);
+      }
+    });
+  }
+
+  if(state.rules.temperature&&s.temp>32) {
+    if(!alerted) {
+      alerted=true;
+      addLog("Температура жоғары!",`${s.temp} °C` ,true);
+      showToast("⚠ Температура жоғары!");
+    }
+  } else {
+    alerted=false;
+  }
+}
+
+function applyScene(id) {
+  const configs={
+    morning:{ids:["living","kitchen","hall"],brightness:65,tone:0},
+    focus:{ids:["office","kitchen"],brightness:95,tone:2},
+    relax:{ids:["living","bedroom"],brightness:28,tone:0},
+    away:{ids:[],brightness:50,tone:1}
+  };
+
+  const c=configs[id];
+  if(!c)return;
+
+  state.scene=id;
+  state.rooms.forEach(r=>{
+    r.on=c.ids.includes(r.id);
+    r.brightness=state.rules.eco?Math.min(c.brightness,55):c.brightness;
+    r.tone=c.tone;
+  });
+
+  addLog("Жарық сценарийі",SCENES.find(x=>x.id===id).name);
+  showToast("Сценарий іске қосылды");
+  renderAll();
+}
+
+function trackLux() {
+  state.history.push(state.sensors.lux);
+  state.history=state.history.slice(-30);
+}
+
+document.addEventListener("click",e=>{
+  let b=e.target.closest("[data-page]");
+  if(b) {
+    navigate(b.dataset.page);
+    return;
+  }
+
+  b=e.target.closest("[data-select]");
+  if(b) {
+    state.selected=b.dataset.select;
+    navigate("home");
+    renderAll();
+    return;
+  }
+
+  b=e.target.closest("[data-scene]");
+  if(b) {
+    applyScene(b.dataset.scene);
+    return;
+  }
+
+  b=e.target.closest("[data-toggle]");
+  if(b) {
+    const r=getRoom(b.dataset.toggle);
+    r.on=!r.on;
+    if(r.on&&state.rules.eco)r.brightness=Math.min(r.brightness,55);
+    state.scene="";
+    addLog(r.name,r.on?"Шам қосылды":"Шам өшірілді");
+    renderAll();
+    return;
+  }
+
+  b=e.target.closest("[data-tone]");
+  if(b) {
+    const r=getRoom(state.selected);
+    r.tone=Number(b.dataset.tone);
+    state.scene="";
+    addLog(r.name,"Жарық түсі өзгерді");
+    renderAll();
+    return;
+  }
+
+  b=e.target.closest("[data-rule]");
+  if(b) {
+    const id=b.dataset.rule;
+    state.rules[id]=!state.rules[id];
+    addLog("Автоматтандыру",`${id}: ${state.rules[id]?"қосылды":"өшірілді"}`);
+    if(state.rules[id])applyRules();
+    renderAll();
+  }
+});
+
+$("selectedToggle").addEventListener("click",()=>{
+  const r=getRoom(state.selected);
+  r.on=!r.on;
+  if(r.on&&state.rules.eco)r.brightness=Math.min(r.brightness,55);
+  state.scene="";
+  addLog(r.name,r.on?"Шам қосылды":"Шам өшірілді");
+  renderAll();
+});
+
+$("brightnessInput").addEventListener("input",e=>{
+  const r=getRoom(state.selected);
+  r.brightness=clamp(e.target.value,1,state.rules.eco?55:100,50);
+  e.target.value=r.brightness;
+  renderHouse();
+  renderMetrics();
+  renderAnalytics();
+  save();
+});
+
+$("brightnessInput").addEventListener("change",()=>{
+  const r=getRoom(state.selected);
+  addLog(r.name,`Жарықтық: ${r.brightness}%`);
+});
+
+document.addEventListener("input",e=>{
+  const id=e.target.dataset.bright;
+  if(!id)return;
+
+  const r=getRoom(id);
+  r.brightness=clamp(e.target.value,1,state.rules.eco?55:100,50);
+  e.target.value=r.brightness;
+
+  renderHouse();
+  renderMetrics();
+  renderAnalytics();
+
+  const card=e.target.closest(".room-card");
+  if(card) {
+    card.querySelector(".range-line strong").textContent=r.brightness+"%";
+    card.querySelector("p:last-of-type").textContent=
+      `Ағымдағы қуат: ${roomPower(r).toFixed(1)} Вт`;
+  }
+  save();
+});
+
+document.addEventListener("change",e=>{
+  const id=e.target.dataset.bright;
+  if(id) {
+    const r=getRoom(id);
+    addLog(r.name,`Жарықтық: ${r.brightness}%`);
+  }
+});
+
+$("allOn").addEventListener("click",()=>{
+  state.rooms.forEach(r=>{
+    r.on=true;
+    if(state.rules.eco)r.brightness=Math.min(r.brightness,55);
+  });
+  state.scene="";
+  addLog("Барлық шам қосылды","6 бөлме");
+  renderAll();
+});
+
+$("allOff").addEventListener("click",()=>{
+  state.rooms.forEach(r=>r.on=false);
+  state.scene="";
+  addLog("Барлық шам өшірілді","6 бөлме");
+  renderAll();
+});
+
+$("luxInput").addEventListener("input",e=>{
+  state.sensors.lux=Number(e.target.value);
+  $("luxValue").textContent=state.sensors.lux;
+  renderMetrics();
+  save();
+});
+
+$("luxInput").addEventListener("change",()=>{
+  trackLux();
+  addLog("Жарық датчигі",`${state.sensors.lux} lux`);
+  applyRules();
+  renderAll();
+});
+
+$("tempInput").addEventListener("input",e=>{
+  state.sensors.temp=Number(e.target.value);
+  $("tempValue").textContent=state.sensors.temp;
+  save();
+});
+
+$("tempInput").addEventListener("change",()=>{
+  addLog("Температура",`${state.sensors.temp} °C`);
+  applyRules();
+  renderAll();
+});
+
+$("motionBtn").addEventListener("click",()=>{
+  state.sensors.motion=!state.sensors.motion;
+  addLog("Қозғалыс",state.sensors.motion?"Анықталды":"Тоқтады");
+  applyRules();
+  renderAll();
+});
+
+$("simBtn").addEventListener("click",()=>{
+  state.sim=!state.sim;
+  addLog("Симуляция",state.sim?"Қосылды":"Тоқтады");
+  renderAll();
+});
+
+setInterval(()=>{
+  if(!state.sim)return;
+
+  state.sensors.lux=clamp(
+    state.sensors.lux+Math.round((Math.random()-.5)*120),
+    0,1000,350
+  );
+
+  state.sensors.temp=clamp(
+    state.sensors.temp+(Math.random()<.5?-1:1),
+    15,40,24
+  );
+
+  if(Math.random()<.25)state.sensors.motion=!state.sensors.motion;
+
+  trackLux();
+  applyRules();
+  renderAll();
+},4000);
+
+setInterval(()=>{
+  const now=Date.now();
+  const seconds=Math.max(0,Math.min((now-lastTick)/1000,10));
+  lastTick=now;
+  state.energy+=totalPower()*seconds/3600000;
+  renderMetrics();
+  save();
+},5000);
+
+$("clearBtn").addEventListener("click",()=>{
+  state.logs=[];
+  save();
+  renderLogs();
+  showToast("Журнал тазаланды");
+});
+
+$("exportBtn").addEventListener("click",()=>{
+  const blob=new Blob(
+    [JSON.stringify({...state,project:"ASTER Living Studio"},null,2)],
+    {type:"application/json"}
+  );
+
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;
+  a.download="ASTER_Data.json";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  showToast("Деректер сақталды");
+});
+
+$("importInput").addEventListener("change",async e=>{
+  const file=e.target.files[0];
+  if(!file)return;
+
+  try {
+    const data=JSON.parse(await file.text());
+    if(!Array.isArray(data.rooms)||!data.sensors||!data.rules) {
+      throw Error("Қате JSON");
+    }
+
+    state=normalize(data);
+    alerted=state.sensors.temp>32;
+    addLog("Деректер импортталды",file.name);
+    renderAll();
+    showToast("Деректер импортталды");
+  } catch(error) {
+    console.error(error);
+    showToast("JSON файлы жарамсыз");
+  }
+  e.target.value="";
+});
+
+window.addEventListener("resize",()=>{
+  if(currentPage==="analytics")drawChart();
+});
+
+if(!state.logs.length) {
+  addLog("ASTER Living Studio іске қосылды","6 бөлме және 3 датчик дайын");
+}
+renderAll();
+
+</script>
+</body>
+</html>
